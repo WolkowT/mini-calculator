@@ -1,0 +1,17 @@
+button {
+  height: 50px;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  background-color: #e0e0e0;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+button:hover {
+  background-color: #d0d0d0;
+}
+
+button:active {
+  transform: scale(0.98);
+}
