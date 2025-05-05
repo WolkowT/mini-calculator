@@ -10,8 +10,7 @@ export const App = () => {
   const [operator, setOperator] = useState('');
   const [result, setResult] = useState('');
 
-  const buttonClick = (event) => {
-    const simbol = event.target.textContent;
+  const buttonClick = (simbol) => {
 
     if (simbol === 'C') {
       setOperand1('0');
@@ -74,7 +73,7 @@ export const App = () => {
         {result === '' ? <div className={styles.display}>{display}</div> : <div className={styles.displayResult}>{result}</div>}
         <div className={styles.buttons}>
             {NUMS.map(number => (
-              <button className={`${number === 'C' ? styles.clear : null} ${number === '=' ? styles.equals : null} ${number === '-' ? styles.operator : null} ${number === '+' ? styles.operator : null} ${number === '0' ? styles.test : null}`} key={number} onClick={buttonClick}>{number}</button>
+              <button className={`${number === 'C' ? styles.clear : null} ${number === '=' ? styles.equals : null} ${number === '-' ? styles.operator : null} ${number === '+' ? styles.operator : null} ${number === '0' ? styles.test : null}`} key={number} onClick={() => buttonClick(`${number}`)}>{number}</button>
             ))}
         </div>
       </div>
